@@ -1,11 +1,9 @@
 package top.szz.boot.basic.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import top.szz.boot.basic.controller.dto.AjaxResponse;
+import top.szz.boot.basic.controller.dto.Param;
 import top.szz.boot.basic.entity.Book;
 import top.szz.boot.basic.entity.BookReader;
 
@@ -71,4 +69,83 @@ public class BookController {
                 .build();
         return AjaxResponse.success(book);
     }
+
+    @PostMapping()
+    public AjaxResponse saveBook(@RequestBody Book book){
+        log.info("saveBook:" + book);
+        return AjaxResponse.success(book);
+    }
+
+//    @PutMapping()
+//    public AjaxResponse updateBook(@RequestParam int id,@RequestParam String title){
+//        Book book = Book.builder()
+//                .id(111)
+//                .author("szz")
+//                .title("Java")
+//                .content("Java")
+//                .createdTime(new Date())
+//                .build();
+//        log.info("book:" + book);
+//
+//        book.setId(id);
+//        book.setTitle(title);
+//
+//        log.info("book:" + book);
+//        return AjaxResponse.success(book);
+//    }
+    @PutMapping()
+    public AjaxResponse updateBook(@RequestBody Book book){
+        Book book1 = Book.builder()
+                .id(111)
+                .author("szz")
+                .title("Java")
+                .content("Java")
+                .createdTime(new Date())
+                .build();
+        log.info("book:" + book1);
+
+        book1.setId(book.getId());
+        book1.setTitle(book.getTitle());
+
+        log.info("book:" + book1);
+        return AjaxResponse.success(book1);
+    }
+
+//    @DeleteMapping("{id}")
+//    public AjaxResponse deleteBook(@PathVariable int id){
+//        log.info("id:"+id);
+//        return AjaxResponse.success();
+//    }
+
+
+//    @DeleteMapping()
+//    public AjaxResponse deleteBook(@RequestParam(value = "id",defaultValue = "111")int idd,@RequestParam("title")String ti){
+//        log.info("id:" + idd);
+//        log.info("title:"+ti);
+//        return AjaxResponse.success();
+//    }
+//
+
+//       @DeleteMapping()
+//       public AjaxResponse deleteBook(int id,String title){
+//          log.info("id:" + id);
+//          log.info("title:"+title);
+//          return AjaxResponse.success();
+//    }
+
+//        @DeleteMapping()
+//        public AjaxResponse deleteBook(@RequestParam("id") int idd,@RequestParam("title") String ti){
+//            log.info("id:" + idd);
+//            log.info("title:"+ti);
+//            return AjaxResponse.success();
+//}
+
+
+    @DeleteMapping()
+    public AjaxResponse deleteBook(@RequestBody Param param){
+        log.info("id:" + param.getId());
+        log.info("title:"+param.getTitle());
+        return AjaxResponse.success(param);
+    }
+
 }
