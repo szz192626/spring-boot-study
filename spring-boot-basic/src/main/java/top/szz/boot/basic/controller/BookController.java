@@ -1,5 +1,7 @@
 package top.szz.boot.basic.controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import top.szz.boot.basic.controller.dto.AjaxResponse;
@@ -20,8 +22,10 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/api/v1/books")
 @Slf4j
+@Api(tags = "书管理接口")
 public class BookController {
 
+    @ApiOperation("获取全部书本")
     @GetMapping("all")
     public AjaxResponse selectBooks(){
         BookReader[] readers ={
@@ -57,7 +61,7 @@ public class BookController {
         List<Book> bookList =Arrays.asList(books);
         return AjaxResponse.success(bookList);
     }
-
+    @ApiOperation("URL传参，根据id获取书本")
     @GetMapping("{id}")
     public AjaxResponse getBook(@PathVariable int id){
         Book book = Book.builder()
@@ -69,7 +73,7 @@ public class BookController {
                 .build();
         return AjaxResponse.success(book);
     }
-
+    @ApiOperation("增加书本")
     @PostMapping()
     public AjaxResponse saveBook(@RequestBody Book book){
         log.info("saveBook:" + book);
@@ -93,6 +97,7 @@ public class BookController {
 //        log.info("book:" + book);
 //        return AjaxResponse.success(book);
 //    }
+    @ApiOperation("修改书本")
     @PutMapping()
     public AjaxResponse updateBook(@RequestBody Book book){
         Book book1 = Book.builder()
@@ -140,7 +145,7 @@ public class BookController {
 //            return AjaxResponse.success();
 //}
 
-
+    @ApiOperation("删除书本")
     @DeleteMapping()
     public AjaxResponse deleteBook(@RequestBody Param param){
         log.info("id:" + param.getId());
