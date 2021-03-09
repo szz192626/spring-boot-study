@@ -1,0 +1,38 @@
+{
+  "properties": [
+    {
+      "name": "family.family-name",
+      "type": "java.lang.String",
+      "description": "Description for family.family-name."
+    },
+    {
+      "name": "family.father.name",
+      "type": "java.lang.String",
+      "description": "Description for family.father.name."
+    },
+    {
+      "name": "family.father.age",
+      "type": "java.lang.String",
+      "description": "Description for family.father.age."
+    },
+    {
+      "name": "family.mother.alias",
+      "type": "java.lang.String",
+      "description": "Description for family.mother.alias."
+    },
+    {
+      "name": "family.child.name",
+      "type": "java.lang.String",
+      "description": "Description for family.child.name."
+    },
+    {
+      "name": "family.child.age",
+      "type": "java.lang.String",
+      "description": "Description for family.child.age."
+    },
+    {
+      "name": "family.child.friends",
+      "type": "java.lang.String",
+      "description": "Description for family.child.friends."
+    }
+  ] }
