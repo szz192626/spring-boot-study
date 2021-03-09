@@ -53,4 +53,10 @@ public class AjaxResponse {
         ajaxResponse.setData(obj);
         return ajaxResponse;
     }
+    public static AjaxResponse failure(String message){
+        AjaxResponse ajaxResponse =new AjaxResponse();
+        ajaxResponse.setCode(5001);
+        ajaxResponse.setMessage(message);
+        return ajaxResponse;
+    }
 }
