@@ -19,7 +19,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@ConfigurationProperties(prefix = "family.mother")
+//@ConfigurationProperties(prefix = "family.mother")
 @Component
 public class Mother {
    // @Value("#{'${family.mother.alias:}'.split(',')}")

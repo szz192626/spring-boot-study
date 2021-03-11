@@ -7,26 +7,8 @@ spring:
       max-file-size: 300MB
       max-request-size: 300MB
 
-
-family:
-  family-name: happy family
-  father:
-    name: tom
-    age: ${random.int(25,40)}
-  mother:
-    name: hello
-    alias: [ lovely,alice]
-  child:
-    name: jack
-    age: ${random.int(5,16)}
-    friends:
-      - hobby: football
-        gender: male
-        age: 20
-      - hobby: sing
-        gender: female
-        age: 21
-
+#  profiles:
+#    active : test
 
 
 

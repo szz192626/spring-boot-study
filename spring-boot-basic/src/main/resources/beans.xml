@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--    <bean id="father" class="top.szz.spring.boot.basic.entity.Father">-->
+    <!--        <property name="name" value="tom father"/>-->
+    <!--        <property name="age" value="20"/>-->
+    <!--    </bean>-->
+
+    <bean id="student" class="top.szz.boot.basic.entity.Student">
+        <property name="id" value="123"/>
+        <property name="name" value="tom"/>
+        <!--        <property name="father" ref="father"></property>-->
+    </bean>
+
+    <bean id="student1" class="top.szz.boot.basic.entity.Student">
+        <constructor-arg name="id" value="456"></constructor-arg>
+        <constructor-arg name="name" value="tony"></constructor-arg>
+    </bean>
+</beans>
+

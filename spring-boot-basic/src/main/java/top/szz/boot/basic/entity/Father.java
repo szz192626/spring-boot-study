@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.Min;
+
 /**
  * @author 囧态汗
  * @date 2021/3/9
@@ -18,8 +20,9 @@ import org.springframework.stereotype.Component;
 @NoArgsConstructor
 @Component
 public class Father {
-    @Value("${family.father.name}")
+//    @Value("${family.father.name}")
     private String name;
-    @Value("${family.father.age}")
+    @Min(21)
+//    @Value("${family.father.age}")
     private Integer age;
 }

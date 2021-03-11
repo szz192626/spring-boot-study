@@ -21,12 +21,14 @@ import java.util.Map;
 @AllArgsConstructor
 @NoArgsConstructor
 @Component
-@ConfigurationProperties(prefix = "family.child")
+//@ConfigurationProperties(prefix = "family.child")
 public class Child {
   //  @Value("${family.child.name}")
     private String name;
   //  @Value("${family.child.age}")
     private Integer age;
 
-    private List<Map<String,Object>> friends;
+//    private List <Map<String,Object>> friends;
+         private  List<Friend> friends;
+
 }
